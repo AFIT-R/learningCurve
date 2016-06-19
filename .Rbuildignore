@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.travis\.yml$
+^\.Rhistory$
+^\.Rprofile$
+^\.RData$
+^\.Ruserdata$
+meetings/
