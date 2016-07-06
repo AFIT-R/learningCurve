@@ -1,4 +1,4 @@
-#' Unit Learning Curve Function
+#' Crawford's Unit Learning Curve Function
 #'
 #' @description Predicts the time or cost of the nth unit given the time of the mth unit and the learning rate
 #' 
@@ -136,7 +136,7 @@ unit_cum_appx <- function(t, n, r, m = 1, na.rm = FALSE){
 
 #' Midpoint Unit Function
 #'
-#' @description Provides the so-called "midpoint" or average unit between units m and n, where n > m
+#' @description Provides the so-called "midpoint" or average unit between units m and n (where n > m). Based on Crawford's unit learning curve model.
 #' 
 #' @param m lower bound unit of production
 #' @param n upper bound unit of production
@@ -181,7 +181,7 @@ unit_midpoint <- function(m, n, r, na.rm = FALSE){
 
 #' Block Summary Function
 #'
-#' @description Provides the summary for the block containing units m through n, where n > m
+#' @description Provides summary information for the block containing units m through n (where n > m). Based on Crawford's unit learning curve model.
 #' 
 #' @param t time for the mth unit
 #' @param m lower bound unit of production block
