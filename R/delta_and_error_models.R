@@ -4,6 +4,7 @@
 #' 
 #' @param t time (or cost) required to produce the first unit
 #' @param n the nth unit you wish to predict the time (or cost) for when comparing unit predictions or the last unit in the block when comparing cumulative time (or costs)
+#' @param m mth unit for which you have time (or cost) information (default is m = 1)
 #' @param r learning curve rate
 #' @param level calculate unit ("u") versus cumulative ("c") differences (default = "u")
 #'

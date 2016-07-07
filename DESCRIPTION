@@ -1,10 +1,12 @@
 Package: learningCurve
 Type: Package
-Title: Does learning curve for production
+Title: An Implementation of Crawford's and Wright's Learning Curve Production Functions
 Version: 1.0
 Date: 2016-06-10
 Author: Jason Freels (aut), Bradley Boehmke (aut)
 Maintainer: <auburngrads@live.com>
-Description: Learning curves are great.  You should use them. they will make you happy. More about what it does (maybe more than one line)
+Description: An implementation of Crawford's and Wright's learning curve production functions. It provides unit and cumulative block estimates for time (or cost) of units along with an aggregate learning curve. It also provides delta and error functions and some basic learning curve plotting functions.
 License: GPL-2
 RoxygenNote: 5.0.1
+Imports:
+    ggplot2
