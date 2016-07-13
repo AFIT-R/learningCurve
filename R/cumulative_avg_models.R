@@ -6,6 +6,7 @@
 #' @param n nth unit you wish to predict the time (or cost) for
 #' @param m mth unit for which you have time (or cost) information (default is m = 1)
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
@@ -47,6 +48,7 @@ ca_unit <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param n last unit of the production block of concern
 #' @param m first unit of the production block of concern (default: m = 1)
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 

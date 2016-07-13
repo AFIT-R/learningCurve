@@ -6,6 +6,7 @@
 #' @param n nth unit you wish to predict the time (or cost) for
 #' @param m mth unit of production (default set to 1st production unit)
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
@@ -43,9 +44,10 @@ unit_curve <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @description Provides the exact cumulative time or cost required for units m through n (inclusive) using the Crawford unit model
 #' 
 #' @param t time (or cost) required for the mth unit of production
-#' @param nth unit you wish to predict the cumulative time (or cost) to
+#' @param n The unit you wish to predict the cumulative time (or cost) to
 #' @param m mth unit of production (default set to 1st production unit)
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
@@ -91,9 +93,10 @@ unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @description Provides the approximate cumulative time or cost required for units m through n (inclusive) using the Crawford unit model. Provides nearly the exact output as unit_cum_exact(), usually only off by 1-2 units but reduces computational time drastically if trying to calculate cumulative hours (costs) for over a million units.
 #' 
 #' @param t time (or cost) required for the mth unit of production
-#' @param nth unit you wish to predict the cumulative time (or cost) to
+#' @param n The unit you wish to predict the cumulative time (or cost) to
 #' @param m mth unit of production (default set to 1st production unit)
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
@@ -141,6 +144,7 @@ unit_cum_appx <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param m lower bound unit of production
 #' @param n upper bound unit of production
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
@@ -187,6 +191,7 @@ unit_midpoint <- function(m, n, r, na.rm = FALSE){
 #' @param m lower bound unit of production block
 #' @param n upper bound unit of production block
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
@@ -232,12 +237,3 @@ unit_block_summary <- function(t, m, n, r, na.rm = FALSE){
   return(y)
   
 }
-
-
-
-
-
-
-
-
-

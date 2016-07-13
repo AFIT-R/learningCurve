@@ -3,6 +3,7 @@
 #' @description Computes the natural slope rate for given learning rates
 #' 
 #' @param r learning curve rate
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
@@ -29,6 +30,7 @@ natural_slope <- function(r, na.rm = FALSE){
 #' @description Computes the learning rate for given natural slopes
 #' 
 #' @param b natural slope
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 

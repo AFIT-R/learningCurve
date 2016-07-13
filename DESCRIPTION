@@ -8,5 +8,4 @@ Maintainer: <auburngrads@live.com>
 Description: An implementation of Crawford's and Wright's learning curve production functions. It provides unit and cumulative block estimates for time (or cost) of units along with an aggregate learning curve. It also provides delta and error functions and some basic learning curve plotting functions.
 License: GPL-2
 RoxygenNote: 5.0.1
-Imports:
-    ggplot2
+Imports: ggplot2

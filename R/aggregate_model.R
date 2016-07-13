@@ -5,6 +5,7 @@
 #' @param t vector of hours (or costs) for the first unit from departments 1 through m
 #' @param n total units to be produced across all departments
 #' @param r vector of historical learning rates for departments 1 through m
+#' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
 
