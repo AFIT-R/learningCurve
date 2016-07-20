@@ -8,6 +8,12 @@
 #' @param r learning curve rate
 #' @param model choose between the Crawford ("u") or Wright ("ca") models or plot both models with "both"
 #' @param level plot the learning curve at the unit ("u") or cumulative ("c") level
+#' 
+#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 geom_line
+#' @importFrom ggplot2 geom_point
+#' @importFrom ggplot2 geom_text
+#' @importFrom ggplot2 aes
 #'
 #' @export
 
@@ -23,10 +29,10 @@ plot_unit_curve <- function(t, m, n, r, model = "u", level = "u"){
                      cumulative.value = cumsum(unit_curve(t = t, m, n = m:n, r = r)))
     
     if(level == "u") {
-      ggplot2::ggplot(data = df, aes(x = x, y = value)) +
+      ggplot2::ggplot(data = df, ggplot2::aes(x = df$x, y = df$value)) +
         geom_line()
     } else {
-      ggplot2::ggplot(data = df, aes(x = x, y = cumulative.value)) +
+      ggplot2::ggplot(data = df, ggplot2::aes(x = df$x, y = df$cumulative.value)) +
         geom_line()
     }
     
@@ -37,10 +43,10 @@ plot_unit_curve <- function(t, m, n, r, model = "u", level = "u"){
                      cumulative.value = cumsum(ca_unit(t = t, m = m, n = m:n, r = r)))
     
     if(level == "u") {
-      ggplot2::ggplot(data = df, aes(x = x, y = value)) +
+      ggplot2::ggplot(data = df, ggplot2::aes(x = df$x, y = df$value)) +
         geom_line()
     } else {
-      ggplot2::ggplot(data = df, aes(x = x, y = cumulative.value)) +
+      ggplot2::ggplot(data = df, ggplot2::aes(x = df$x, y = df$cumulative.value)) +
         geom_line()
     }
     
@@ -58,10 +64,10 @@ plot_unit_curve <- function(t, m, n, r, model = "u", level = "u"){
     df <- rbind(df1, df2)
     
     if(level == "u") {
-      ggplot2::ggplot(data = df, aes(x = x, y = value, color = model)) +
+      ggplot2::ggplot(data = df, ggplot2::aes(x = df$x, y = df$value, color = df$model)) +
         geom_line()
-    } else{
-      ggplot2::ggplot(data = df, aes(x = x, y = cumulative.value, color = model)) +
+    } else {
+      ggplot2::ggplot(data = df, ggplot2::aes(x = df$x, y = df$cumulative.value, color = df$model)) +
         geom_line()
     }
   }
@@ -82,16 +88,17 @@ plot_unit_curve <- function(t, m, n, r, model = "u", level = "u"){
 
 plot_block_summary <- function(t, m, n, r){
   
-  df <- data.frame(x = m:n, value = unit_curve(t = t, m = m, n = m:n, r = r))
+  df <- data.frame(x = m:n, 
+                   value = unit_curve(t = t, m = m, n = m:n, r = r))
   
   midpoint <- data.frame(x = unit_block_summary(t, m, n, r)[[3]],
                          value = unit_block_summary(t, m, n, r)[[4]],
                          label = paste0("[", round(unit_block_summary(t, m, n, r)[[3]]), ", ", round(unit_block_summary(t, m, n, r)[[4]]), "]"))
   
-  ggplot2::ggplot(df, aes(x = x, y = value)) +
+  ggplot2::ggplot(data = df, aes(x = df$x, y = df$value)) +
     geom_line() +
-    geom_point(data = midpoint, aes(x = x, y = value)) +
-    geom_text(data = midpoint, aes(x = x, y = value, label = label), 
+    geom_point(data = midpoint, aes(x = midpoint$x, y = midpoint$value)) +
+    geom_text(data = midpoint, aes(x = midpoint$x, y = midpoint$value, label = midpoint$label), 
               hjust = 0, vjust = 0)
 }
 
@@ -115,9 +122,10 @@ plot_delta <- function(t, m, n, r, level = "u"){
   }
   
   if(level == "u") {
-    df <- data.frame(x = m:n, y = delta(t = t, m = m, n = n, r = r, level = "u"))
+    df <- data.frame(x = m:n, 
+                     y = delta(t = t, m = m, n = n, r = r, level = "u"))
     
-    y <- ggplot2::ggplot(df, aes(x = x, y = y)) +
+    y <- ggplot2::ggplot(data = df, aes(x = df$x, y = df$y)) +
       geom_line()
     
     if(n < 100) y <- y + geom_point(size = .5)
@@ -125,9 +133,10 @@ plot_delta <- function(t, m, n, r, level = "u"){
   } 
   
   if(level == "c") {
-    df <- data.frame(x = m:n, y = delta(t = t, m = m, n = n, r = r, level = "c"))
+    df <- data.frame(x = m:n, 
+                     y = delta(t = t, m = m, n = n, r = r, level = "c"))
     
-    y <- ggplot2::ggplot(df, aes(x = x, y = y)) +
+    y <- ggplot2::ggplot(data = df, aes(x = df$x, y = df$y)) +
       geom_line()
     
     if(n < 100) y <- y + geom_point(size = .5)
