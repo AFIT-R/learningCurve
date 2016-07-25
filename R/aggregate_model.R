@@ -8,6 +8,19 @@
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
+#' @example 
+#' # A project is expected to get underway soon to produce 300
+#' # widgets. Three departments will be involved. Historically,
+#' # these departments have had learning curves of 85%, 87%, and
+#' # 80% respectively. The first unit hours for these departments
+#' # have been estimated at 70, 45, and 25 respectively. What is 
+#' # the total predicted hours required for the entire effort?
+#' 
+#' t <- c(70, 45, 25)
+#' r <- c(.85, .87, .8)
+#' 
+#' agg_curve(t = t, r = r, n = 300)
+#' ## [1] 11000.96
 
 agg_curve <- function(t, r, n, na.rm = FALSE){
   
