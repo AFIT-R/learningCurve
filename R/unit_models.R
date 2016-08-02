@@ -9,6 +9,26 @@
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
+#' @examples 
+#' library(learningCurve)
+#' # An estimator believes that the first unit of a product will 
+#' # require 100 labor hours. How many hours will the 125th unit
+#' # require given the organization has historically experienced
+#' # an 85% learning curve?
+#' 
+#' unit_curve(t = 100, m = 1, n = 125, r = .85)
+#' ## [1] 32.23647
+#' 
+#' # If the estimator wants to assess the hours required for the
+#' # 125 unit given multiple learning curve rates
+#' 
+#' r <- c(.8, .85, .9, .95)
+#' unit_curve(t = 100, m = 1, n = 125, r = r)
+#' ## [1] 21.13225 32.23647 48.00243 69.95640
+#' 
+#' # If the estimator has the time required for the 100th unit
+#' unit_curve(t = 100, m = 100, n = 125, r = .85)
+#' ## [1] 94.90257
 
 unit_curve <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -50,6 +70,16 @@ unit_curve <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
+#' @examples 
+#' library(learningCurve)
+#' # An estimator believes that the first unit of a product will 
+#' # require 100 labor hours. How many total hours will be required
+#' # for 125 units given the organization has historically experienced
+#' # an 85% learning curve?
+#' 
+#' unit_cum_exact(t = 100, n = 125, r = .85)
+#' ## [1] 5201.085
+
 
 unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -99,6 +129,27 @@ unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
+#' @examples 
+#' library(learningCurve)
+#' # An estimator believes that the first unit of a product will 
+#' # require 100 labor hours. How many total hours will be required
+#' # for 125 units given the organization has historically experienced
+#' # an 85% learning curve?
+#' 
+#' unit_cum_exact(t = 100, n = 125, r = .85)
+#' ## [1] 5201.085
+#' 
+#' # Computational difference between unit_cum_exact() and unit_cum_appx() 
+#' # for 1 million units
+#' 
+#' system.time(unit_cum_exact(t = 100, n = 1000000, r = .85))
+#' ##  user  system elapsed 
+#' ## 0.105   0.004   0.109
+#' 
+#' system.time(unit_cum_appx(t = 100, n = 1000000, r = .85))
+#' ## user  system elapsed 
+#' ##  0       0       0
+
 
 unit_cum_appx <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -147,6 +198,12 @@ unit_cum_appx <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
+#' @examples
+#' # If a production block runs from unit 201 to unit 500 inclusive
+#' # with a 75% learning curve, what is the midpoint unit?
+#' 
+#' unit_midpoint(m = 201, n = 500, r = .75)
+#' ## [1] 334.6103
 
 unit_midpoint <- function(m, n, r, na.rm = FALSE){
   
@@ -194,6 +251,23 @@ unit_midpoint <- function(m, n, r, na.rm = FALSE){
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
+#' @examples
+#' # A production block runs from unit 201 to unit 500 inclusive.
+#' # The 201st unit had a required time of 125 hours with a 75% 
+#' # learning curve, what is the block summary?
+#' 
+#' unit_block_summary(t = 125, m = 201, n = 500, r = .75)
+#' ## $`block units`
+#' ## [1] 300
+#' 
+#' ## $`block hours`
+#' ## [1] 30350.48
+#' 
+#' ## $`midpoint unit`
+#' ## [1] 334.6103
+#' 
+#' ## $`midpoint hours`
+#' ## [1] 101.1683
 
 unit_block_summary <- function(t, m, n, r, na.rm = FALSE){
   
