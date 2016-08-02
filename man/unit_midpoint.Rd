@@ -18,4 +18,11 @@ unit_midpoint(m, n, r, na.rm = FALSE)
 \description{
 Provides the so-called "midpoint" or average unit between units m and n (where n > m). Based on Crawford's unit learning curve model.
 }
+\examples{
+# If a production block runs from unit 201 to unit 500 inclusive
+# with a 75\% learning curve, what is the midpoint unit?
+
+unit_midpoint(m = 201, n = 500, r = .75)
+## [1] 334.6103
+}
 

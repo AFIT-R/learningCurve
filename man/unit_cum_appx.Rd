@@ -20,4 +20,25 @@ unit_cum_appx(t, n, r, m = 1, na.rm = FALSE)
 \description{
 Provides the approximate cumulative time or cost required for units m through n (inclusive) using the Crawford unit model. Provides nearly the exact output as unit_cum_exact(), usually only off by 1-2 units but reduces computational time drastically if trying to calculate cumulative hours (costs) for over a million units.
 }
+\examples{
+library(learningCurve)
+# An estimator believes that the first unit of a product will 
+# require 100 labor hours. How many total hours will be required
+# for 125 units given the organization has historically experienced
+# an 85\% learning curve?
+
+unit_cum_exact(t = 100, n = 125, r = .85)
+## [1] 5201.085
+
+# Computational difference between unit_cum_exact() and unit_cum_appx() 
+# for 1 million units
+
+system.time(unit_cum_exact(t = 100, n = 1000000, r = .85))
+##  user  system elapsed 
+## 0.105   0.004   0.109
+
+system.time(unit_cum_appx(t = 100, n = 1000000, r = .85))
+## user  system elapsed 
+##  0       0       0
+}
 

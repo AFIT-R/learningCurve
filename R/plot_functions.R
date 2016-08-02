@@ -17,7 +17,7 @@
 #'
 #' @export
 #' @examples 
-#' #' library(learningCurve)
+#' # library(learningCurve)
 #' # An estimator wants to plot the learning curve for for units 
 #' # one through 125 where the first unit requires 100 hours and
 #' # the learning rate is 85%.
@@ -106,7 +106,7 @@ plot_unit_curve <- function(t, m, n, r, model = "u", level = "u"){
 #' @param r learning curve rate
 #'
 #' @export
-#' @example 
+#' @examples
 #' 
 #' # A production block runs from unit 201 to unit 500 inclusive.
 #' # The 201st unit had a required time of 125 hours with a 75% 

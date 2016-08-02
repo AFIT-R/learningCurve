@@ -20,4 +20,14 @@ unit_cum_exact(t, n, r, m = 1, na.rm = FALSE)
 \description{
 Provides the exact cumulative time or cost required for units m through n (inclusive) using the Crawford unit model
 }
+\examples{
+library(learningCurve)
+# An estimator believes that the first unit of a product will 
+# require 100 labor hours. How many total hours will be required
+# for 125 units given the organization has historically experienced
+# an 85\% learning curve?
+
+unit_cum_exact(t = 100, n = 125, r = .85)
+## [1] 5201.085
+}
 

@@ -9,7 +9,7 @@
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
-#' @examples 
+#' @examples
 #' library(learningCurve)
 #' # An estimator believes that the first unit of a product will 
 #' # require 100 labor hours. How many hours will the 125th unit

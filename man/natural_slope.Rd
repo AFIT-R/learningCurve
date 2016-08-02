@@ -14,4 +14,11 @@ natural_slope(r, na.rm = FALSE)
 \description{
 Computes the natural slope rate for given learning rates
 }
+\examples{
+
+# Calculate the natural slope for learning rates of 80\%, 85\%, 90\%
+
+natural_slope(r = c(.80, .85, .90))
+## [1] -0.3219281 -0.2344653 -0.1520031
+}
 

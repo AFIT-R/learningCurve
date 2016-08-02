@@ -20,4 +20,12 @@ ca_unit(t, n, r, m = 1, na.rm = FALSE)
 \description{
 Computes the time (or cost) required for a specific unit using Wright's cumulative average model.
 }
+\examples{
+# An estimator want to know the unit hours for unit 2,200 using
+# when the hours for unit 1 were 110 and the learning rate was
+# 88.5\%.
+
+ca_unit(t = 110, m = 1, n = 2200, r = .885)
+## [1] 23.34001
+}
 

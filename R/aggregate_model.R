@@ -8,7 +8,9 @@
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @export
-#' @example 
+#' @examples
+#' 
+#' \dontrun{
 #' # A project is expected to get underway soon to produce 300
 #' # widgets. Three departments will be involved. Historically,
 #' # these departments have had learning curves of 85%, 87%, and
@@ -21,6 +23,7 @@
 #' 
 #' agg_curve(t = t, r = r, n = 300)
 #' ## [1] 11000.96
+#' }
 
 agg_curve <- function(t, r, n, na.rm = FALSE){
   
