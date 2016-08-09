@@ -3,9 +3,10 @@ Type: Package
 Title: An Implementation of Crawford's and Wright's Learning Curve Production Functions
 Version: 1.0
 Date: 2016-06-10
-Author: Jason Freels (aut), Bradley Boehmke (aut)
-Maintainer: <auburngrads@live.com>
+Authors@R:  c(
+            person('Jason', 'Freels', email = 'auburngrads@live.com', role = c('aut', 'cre')), 
+            person('Bradley', 'Boehmke', email = 'bradleyboehmke@gmail.com', role = c('aut')))
 Description: An implementation of Crawford's and Wright's learning curve production functions. It provides unit and cumulative block estimates for time (or cost) of units along with an aggregate learning curve. It also provides delta and error functions and some basic learning curve plotting functions.
-License: GPL-2
+License: MIT + file LICENSE
 RoxygenNote: 5.0.1
 Imports: ggplot2
