@@ -1,11 +1,27 @@
 Package: learningCurve
 Type: Package
 Title: An Implementation of Crawford's and Wright's Learning Curve Production Functions
-Version: 1.0
-Date: 2016-06-10
-Author: Jason Freels (aut), Bradley Boehmke (aut)
+Version: 1.1
+Description: Implements common learning curve production functions. It incorporates
+    Crawford's and Wright's learning curve functions to compute unit and cumulative 
+    block estimates for time (or cost) of units along with an aggregate learning 
+    curve. It also provides delta and error functions and some basic learning curve 
+    plotting functions.along with functions to compute aggregated learning curves, 
+    error rates, and to visualize learning curves.
+Date: 2017-02-28
+Authors@R: c(
+    person("Jason", "Freels", email = "auburngrads@live.com", role = c("aut"),
+    person("Bradley", "Boehmke", email = "bradleyboehmke@gmail.com", role = c("aut"))
+    )
 Maintainer: <auburngrads@live.com>
-Description: An implementation of Crawford's and Wright's learning curve production functions. It provides unit and cumulative block estimates for time (or cost) of units along with an aggregate learning curve. It also provides delta and error functions and some basic learning curve plotting functions.
+URL: https://github.com/Auburngrads/learningCurve
+BugReports: https://github.com/Auburngrads/learningCurve/issues
 License: GPL-2
-RoxygenNote: 5.0.1
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 2.10)
 Imports: ggplot2
+RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

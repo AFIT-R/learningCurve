@@ -1,0 +1,61 @@
+---
+title: "learningCurve"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+Learning curves are steep in history and have several alternate names such as improvement curves ([Fauber, 1989](http://search.proquest.com/openview/4192c8b3f2e14c8a64ac5c118883aede/1?pq-origsite=gscholar&cbl=36911)), efficiency curves ([Bjorn, 1998](https://link.springer.com/article/10.1007%2FBF01205997?LI=true)), experience curves ([Desroches, Garbesi, Kantner, Buskirk, & Yang, 2013](http://www.sciencedirect.com/science/article/pii/S0301421512008488)), progress curves ([Dutton & Thomas, 1984](http://amr.aom.org/content/9/2/235.short)) and cost improvement curves ([Miller et al., 2012](http://www.tandfonline.com/doi/abs/10.1080/1941658X.2012.682943)). The "learning effect" was first noted by T.P. Wright in the 1920s in connection with aircraft production ([Wright, 1936](http://arc.aiaa.org/doi/abs/10.2514/8.155)). Its use was amplified by experience in connection with aircraft production in World War II. Initially, it was thought to be solely due to the learning of the workers as they repeated their tasks. Later, it was observed that other factors probably entered in, such as improved tools and working conditions, and various management initiatives. Regardless of the exact, or more likely combined, phenomenon we can group these factors together under the general heading of "learning."
+
+The underlying notion behind learning curves is that when people individually or collectively repeat an activity, there tends to be a gain in efficiency. Generally, this takes the form of a decrease in the time needed to do the activity. Because cost is generally related to time or labor hours consumed, learning curves are very important in industrial cost analysis. A key idea underlying the theory is that every time the production quantity doubles, we can expect a more or less fixed percentage decrease in the effort required to build a single unit (the Crawford theory), or in the average time required to build a group of units (the Wright theory). These decreases occur not in big jumps, but more or less smoothly as production continues.
+
+Mathematical models are used to represent learning curves by computing the efficiencies gained when an activity is repeated.  Today, there are many learning curve models, some of which will be discussed in the next section.  The process of capturing or predicting learning curves to assess their influence on future production has been used for many years within the DoD and across industry; in fact, Goldberg & Touw argue that learning curve models are the “most important models in military and industrial cost analysis” ([2003 p. 1](https://www.cna.org/CNA_files/PDF/D0006870.A3.pdf)).   However, guidance provided to analysts on implementation is limited.  Historically, analysts have had to rely on pre-computed tables ([Boren & Campbell, 1970](http://www.rand.org/pubs/research_memoranda/RM6191z3.html?src=mobile)) or on their own abilities to create and implement the learning curve functionality ([AFCAH, 2008](https://acc.dau.mil/adl/en-US/316093/file/46243/AF_Cost_Risk_and_Uncertainty_Handbook_Jul07.pdf)).  As previously mentioned, this can result in several deficiencies such as inconsistent and invalid implementation.  Thus, although learning curves are a foundational mathematical technique in cost analyses the community lacks an organized construct to distribute, compute, and execute learning curves. This suggests that learning curves represent a valid starting point for establishing an R package; for it yields two utilities: 1) establishes an organized vehicle to distribute and perform learning curve calculations and 2) illustrates the efficacy of open source capabilities for the cost analysis community.
+
+## Learning Curve Fundamentals
+
+Several learning curve models have been proposed; however, two models represent the most widespread use – Wright’s cumulative average model and Crawford’s single unit model.  The underlying notion behind the theory of these two models is that every time the production quantity doubles, we can expect an approximate fixed percentage decrease in the effort required to produce a single unit (Crawford’s theory), or in the average time required to build a group of units (Wright’s theory).  
+
+Both Wright’s and Crawford’s model can be expressed as:
+
+$$y_n=ax^b$$
+
+where $a$ represents the time (or cost) to produce the first unit, $x$ represents the cumulative number of units produced and $b$ the natural slope of the learning curve where $b = log(s)⁄log(2)$.  The primary difference lies in $y_n$, which for Wright’s model represents the cumulative average time (or cost) required for the first $n$ units and for Crawford’s model represents the time (or cost) required for the $n^{th}$ unit of production. 
+
+
+The natural slope ($b$) reflects whether learning proceeds rapidly or slowly but is not always intuitive. Consequently, the natural slope can be expressed as a percent between 0-100% through algebraic conversion of $b$ to obtain $s = 10^{b*log(2)+2}$ which is equivalent to $s = 2^b$. When expressed as the percent slope ($s$) we can state that every time production quantity is doubled, the time (or cost) are reduced to s percent of what they were before the doubling.
+
+### Unit Model Extensions
+
+We may not always have information regarding the first unit. Rather, we may only have time or cost information regarding the $m$th unit ($y_m$) where $m<n$. Consequently, for the unit model, we can still compute the time required for the $n$th unit by recognizing the relationship $y_n ⁄ y_m = n^b ⁄ m^b$  such that the following holds:
+
+$$y_n=y_m \Big(\frac{n}{m}\Big)^b$$
+
+Moreover, the ability to predict the total hours for a block of production is important. Thus the following equation represents the unit by unit summation where $T_{m,n}$ is the total time (or cost) of production for unit $m$ to unit $n$, where $m < n$.
+
+$$ T_{m,n} = a[m^b+(m+1)^b+(m+2)^b+⋯+n^b ] $$
+
+However, exact summation can be computationally slow when calculating for significantly large production blocks.  Consequently, a formulaic approximation to the previous equation can be written as:
+
+$$T_{m,n} = \Big[\frac{a}{1+b}\Big]*\Big[(n+0.5)^{1+b}-(m-.05)^{1+b} \Big]$$
+
+As an example of this approximation's accuracy, when computing $T_{m,n}$ for $a=100$, $m=1$, $n=1,000,000$, and $b=-0.2345$ ($s=85%$) the exact summation produces $T_{m,n}=5,119,612$ and the approximation produces $T_{m,n}=5,119,614$; a difference of only 2 units.
+
+We can also obtain the hypothetical midpoint of a production block. Considering the number of units in a block is represented as $Q=n-m+1$, thus leveraging our previous approximation equation, we can state that unit $k$ represents the average time (or cost) per unit in this block such that $T_{m,n}=y_k * Q$.  We also know that $y_k=ak^b$; therefore, $T_{m,n}=ak^b Q$.  Hence, since $k=(T_{m,n}⁄Qa)^{1/b}$ we can substitute our approximation equation for $T_{m,n}$ and yield the following:
+
+$$k=\Bigg[\frac{(n+0.5)^{1+b}-(m-.05)^{1+b}}{(1+b)(n-m+1)}\Bigg]^{1/b}$$
+
+### Cumulative Average Model Extensions
+
+
+
+
+
+
+
+
+
