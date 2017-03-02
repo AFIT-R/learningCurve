@@ -38,11 +38,12 @@ natural_slope <- function(r, na.rm = FALSE){
 #' @param b natural slope
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples  
-#' Calculate the learning rates for natural slopes -.19, -.22, -.25
+#' # Calculate the learning rates for natural slopes -.19, -.22, -.25
 #' lc_rate(b = c(-.19, -.22, -.25))
 #' ## [1] 0.8766057 0.8585654 0.8408964
+#' 
+#' @export
 
 lc_rate <- function(b, na.rm = FALSE){
   
