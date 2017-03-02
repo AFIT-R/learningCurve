@@ -20,4 +20,22 @@ unit_block_summary(t, m, n, r, na.rm = FALSE)
 \description{
 Provides summary information for the block containing units m through n (where n > m). Based on Crawford's unit learning curve model.
 }
+\examples{
+# A production block runs from unit 201 to unit 500 inclusive.
+# The 201st unit had a required time of 125 hours with a 75\% 
+# learning curve, what is the block summary?
 
+unit_block_summary(t = 125, m = 201, n = 500, r = .75)
+## $`block units`
+## [1] 300
+
+## $`block hours`
+## [1] 30350.48
+
+## $`midpoint unit`
+## [1] 334.6103
+
+## $`midpoint hours`
+## [1] 101.1683
+
+}

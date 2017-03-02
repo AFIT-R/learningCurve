@@ -16,4 +16,15 @@ cum_error(n, r1, r2)
 \description{
 Computes approximate percent error in cumulative time (or cost) due to an incorrect choice of learning curve rate. The output provides the measure of error when learning curve r1 is erroneously chosen when r2 should have been chosen. It is the ratio of the actual cumulative results based on the realized learning curve to the predicted cumulative results based on the erroneously used learning rate.
 }
+\examples{
+# An estimator is predicting hours for a block of 250 units. Historically,
+# the organization has had a learning rate between 85-87\%. What is the
+# potential error in the prediction by using one of these two learning
+# rates (85\% vs. 87\%)? If you go with a learning rate of 85\% and the
+# organization performs at a learning rate of 87\% then the error would
+# be 20\%.
 
+cum_error(n = 250, r1 = .85, r2 = .87)
+## [1] 0.2035303
+
+}

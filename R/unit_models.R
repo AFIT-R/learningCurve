@@ -8,7 +8,6 @@
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples 
 #' library(learningCurve)
 #' # An estimator believes that the first unit of a product will 
@@ -29,6 +28,7 @@
 #' # If the estimator has the time required for the 100th unit
 #' unit_curve(t = 100, m = 100, n = 125, r = .85)
 #' ## [1] 94.90257
+#' @export
 
 unit_curve <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -47,7 +47,7 @@ unit_curve <- function(t, n, r, m = 1, na.rm = FALSE){
     n <- n[!is.na(n)]
     r <- r[!is.na(r)]
     
-    warning('Any strings with NA were filtered. This may result in \n',
+    message('Any strings with NA were filtered. This may result in \n',
             'unexpected recycling.')
   }
   
@@ -69,7 +69,6 @@ unit_curve <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples 
 #' library(learningCurve)
 #' # An estimator believes that the first unit of a product will 
@@ -79,7 +78,8 @@ unit_curve <- function(t, n, r, m = 1, na.rm = FALSE){
 #' 
 #' unit_cum_exact(t = 100, n = 125, r = .85)
 #' ## [1] 5201.085
-
+#' 
+#' @export
 
 unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -103,7 +103,7 @@ unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
     n <- n[!is.na(n)]
     r <- r[!is.na(r)]
     
-    warning('Any strings with NA were filtered. This may result in \n',
+    message('Any strings with NA were filtered. This may result in \n',
             'unexpected recycling.')
   }
   
@@ -128,7 +128,6 @@ unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples 
 #' library(learningCurve)
 #' # An estimator believes that the first unit of a product will 
@@ -136,8 +135,8 @@ unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
 #' # for 125 units given the organization has historically experienced
 #' # an 85% learning curve?
 #' 
-#' unit_cum_exact(t = 100, n = 125, r = .85)
-#' ## [1] 5201.085
+#' unit_cum_appx(t = 100, n = 125, r = .85)
+#' ## [1] 5202.998
 #' 
 #' # Computational difference between unit_cum_exact() and unit_cum_appx() 
 #' # for 1 million units
@@ -149,7 +148,8 @@ unit_cum_exact <- function(t, n, r, m = 1, na.rm = FALSE){
 #' system.time(unit_cum_appx(t = 100, n = 1000000, r = .85))
 #' ## user  system elapsed 
 #' ##  0       0       0
-
+#' 
+#' @export
 
 unit_cum_appx <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -173,7 +173,7 @@ unit_cum_appx <- function(t, n, r, m = 1, na.rm = FALSE){
     n <- n[!is.na(n)]
     r <- r[!is.na(r)]
     
-    warning('Any strings with NA were filtered. This may result in \n',
+    message('Any strings with NA were filtered. This may result in \n',
             'unexpected recycling.')
   }
   
@@ -197,13 +197,14 @@ unit_cum_appx <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples
 #' # If a production block runs from unit 201 to unit 500 inclusive
 #' # with a 75% learning curve, what is the midpoint unit?
 #' 
 #' unit_midpoint(m = 201, n = 500, r = .75)
 #' ## [1] 334.6103
+#' 
+#' @export
 
 unit_midpoint <- function(m, n, r, na.rm = FALSE){
   
@@ -225,7 +226,7 @@ unit_midpoint <- function(m, n, r, na.rm = FALSE){
     n <- n[!is.na(n)]
     r <- r[!is.na(r)]
     
-    warning('Any strings with NA were filtered. This may result in \n',
+    message('Any strings with NA were filtered. This may result in \n',
             'unexpected recycling.')
   }
   
@@ -250,7 +251,6 @@ unit_midpoint <- function(m, n, r, na.rm = FALSE){
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples
 #' # A production block runs from unit 201 to unit 500 inclusive.
 #' # The 201st unit had a required time of 125 hours with a 75% 
@@ -268,6 +268,8 @@ unit_midpoint <- function(m, n, r, na.rm = FALSE){
 #' 
 #' ## $`midpoint hours`
 #' ## [1] 101.1683
+#' 
+#' @export
 
 unit_block_summary <- function(t, m, n, r, na.rm = FALSE){
   

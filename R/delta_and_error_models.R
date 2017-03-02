@@ -8,7 +8,6 @@
 #' @param r learning curve rate
 #' @param level calculate unit ("u") versus cumulative ("c") differences (default = "u")
 #'
-#' @export
 #' @examples 
 #' # The first unit of production is expected to require 50 hours and
 #' # the learning rate is expected to be 88.5%. However, the estimator
@@ -28,6 +27,8 @@
 #' ## [9]  47.29615  52.91710  58.46778  63.95305  69.37727  74.74440  80.05801  85.32129
 #' ## [17]  90.53713  95.70816 100.83674 105.92503 110.97501 115.98848 120.96711 125.91241
 #' ## [25] 130.82581
+#' 
+#' @export
 
 delta <- function(t, m, n, r, level = "u") {
   
@@ -58,7 +59,6 @@ delta <- function(t, m, n, r, level = "u") {
 #' @param r1 original learning curve rate (aka erroneously used learning curve rate)
 #' @param r2 learning curve rate to compare to r1 (aka realized learning curve rate)
 #'
-#' @export
 #' @examples 
 #' # An estimator is predicting hours for a block of 250 units. Historically,
 #' # the organization has had a learning rate between 85-87%. What is the
@@ -69,6 +69,8 @@ delta <- function(t, m, n, r, level = "u") {
 #' 
 #' cum_error(n = 250, r1 = .85, r2 = .87)
 #' ## [1] 0.2035303
+#' 
+#' @export
 
 cum_error <- function(n, r1, r2){
   

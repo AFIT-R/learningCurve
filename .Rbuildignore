@@ -6,3 +6,5 @@
 ^\.RData$
 ^\.Ruserdata$
 meetings/
+^README\.Rmd$
+^README-.*\.png$
