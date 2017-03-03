@@ -13,7 +13,6 @@ Authors@R: c(
     person("Bradley", "Boehmke", email = "bradleyboehmke@gmail.com", role = c("aut", "cre")),
     person("Jason", "Freels", email = "auburngrads@live.com", role = c("aut"))
     )
-Maintainer: Jason Freels <auburngrads@live.com>
 URL: https://github.com/Auburngrads/learningCurve
 BugReports: https://github.com/Auburngrads/learningCurve/issues
 License: GPL (>= 2) | file LICENSE
