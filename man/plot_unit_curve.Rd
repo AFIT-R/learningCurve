@@ -23,7 +23,11 @@ plot_unit_curve(t, m, n, r, model = "u", level = "u")
 Plots the learning curve for units m through n. Allows you to choose between the Crawford and Wright models and also between a unit level plot or a cumulative level plot.
 }
 \examples{
+<<<<<<< HEAD
 #' library(learningCurve)
+=======
+# library(learningCurve)
+>>>>>>> Auburngrads/master
 # An estimator wants to plot the learning curve for for units 
 # one through 125 where the first unit requires 100 hours and
 # the learning rate is 85\%.

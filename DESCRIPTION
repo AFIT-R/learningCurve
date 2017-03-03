@@ -1,7 +1,11 @@
 Package: learningCurve
 Type: Package
 Title: An Implementation of Crawford's and Wright's Learning Curve Production Functions
+<<<<<<< HEAD
 Version: 0.1.1
+=======
+Version: 1.1.1
+>>>>>>> Auburngrads/master
 Description: Implements common learning curve production functions. It incorporates
     Crawford's and Wright's learning curve functions to compute unit and cumulative 
     block estimates for time (or cost) of units along with an aggregate learning 
@@ -13,12 +17,18 @@ Authors@R: c(
     person("Bradley", "Boehmke", email = "bradleyboehmke@gmail.com", role = c("aut", "cre")),
     person("Jason", "Freels", email = "auburngrads@live.com", role = c("aut"))
     )
+<<<<<<< HEAD
 Author: Jason Freels [aut],
   Bradley Boehmke [aut]
 Maintainer: Jason Freels <auburngrads@live.com>
 URL: https://github.com/Auburngrads/learningCurve
 BugReports: https://github.com/Auburngrads/learningCurve/issues
 License: GPL (>= 2)
+=======
+URL: https://github.com/Auburngrads/learningCurve
+BugReports: https://github.com/Auburngrads/learningCurve/issues
+License: GPL (>= 2) | file LICENSE
+>>>>>>> Auburngrads/master
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.10)

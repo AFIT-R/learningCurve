@@ -6,6 +6,10 @@
 ^\.RData$
 ^\.Ruserdata$
 meetings/
+<<<<<<< HEAD
+=======
+article/
+>>>>>>> Auburngrads/master
 ^README\.Rmd$
 ^README-.*\.png$
 ^cran-comments\.md$

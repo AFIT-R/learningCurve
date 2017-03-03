@@ -16,7 +16,7 @@
 #' @importFrom ggplot2 aes
 #'
 #' @examples 
-#' #' library(learningCurve)
+#' # library(learningCurve)
 #' # An estimator wants to plot the learning curve for for units 
 #' # one through 125 where the first unit requires 100 hours and
 #' # the learning rate is 85%.

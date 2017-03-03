@@ -3,7 +3,11 @@ title: "learningCurve"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
+<<<<<<< HEAD
   %\VignetteIndexEntry{Vignette Title}
+=======
+  %\VignetteIndexEntry{learningCurve}
+>>>>>>> Auburngrads/master
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
