@@ -8,11 +8,8 @@
 #' @param na.rm Should \code{NA} values be removed?
 #'
 #' @examples
-<<<<<<< HEAD
-=======
 #' 
 #' \dontrun{
->>>>>>> Auburngrads/master
 #' # A project is expected to get underway soon to produce 300
 #' # widgets. Three departments will be involved. Historically,
 #' # these departments have had learning curves of 85%, 87%, and
@@ -25,10 +22,7 @@
 #' 
 #' agg_curve(t = t, r = r, n = 300)
 #' ## [1] 11000.96
-<<<<<<< HEAD
-=======
 #' }
->>>>>>> Auburngrads/master
 #' 
 #' @export
 

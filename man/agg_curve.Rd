@@ -19,15 +19,6 @@ agg_curve(t, r, n, na.rm = FALSE)
 Computes the approximate aggregate cumulative learning curve formula by calculating the sum of all contributing hours from all departments for all production units 1 through n.
 }
 \examples{
-<<<<<<< HEAD
-# A project is expected to get underway soon to produce 300
-# widgets. Three departments will be involved. Historically,
-# these departments have had learning curves of 85\%, 87\%, and
-# 80\% respectively. The first unit hours for these departments
-# have been estimated at 70, 45, and 25 respectively. What is 
-# the total predicted hours required for the entire effort?
-
-=======
 
 \dontrun{
 # A project is expected to get underway soon to produce 300
@@ -37,15 +28,11 @@ Computes the approximate aggregate cumulative learning curve formula by calculat
 # have been estimated at 70, 45, and 25 respectively. What is 
 # the total predicted hours required for the entire effort?
 
->>>>>>> Auburngrads/master
 t <- c(70, 45, 25)
 r <- c(.85, .87, .8)
 
 agg_curve(t = t, r = r, n = 300)
 ## [1] 11000.96
-<<<<<<< HEAD
-=======
 }
->>>>>>> Auburngrads/master
 
 }
