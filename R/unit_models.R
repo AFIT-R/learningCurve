@@ -8,7 +8,6 @@
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples 
 #' library(learningCurve)
 #' # An estimator believes that the first unit of a product will 
