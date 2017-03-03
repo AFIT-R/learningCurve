@@ -24,5 +24,5 @@ Provides the so-called "midpoint" or average unit between units m and n (where n
 
 unit_midpoint(m = 201, n = 500, r = .75)
 ## [1] 334.6103
-}
 
+}

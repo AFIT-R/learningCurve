@@ -27,5 +27,5 @@ Computes the time (or cost) required for a specific unit using Wright's cumulati
 
 ca_unit(t = 110, m = 1, n = 2200, r = .885)
 ## [1] 23.34001
-}
 
+}

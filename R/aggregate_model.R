@@ -7,7 +7,6 @@
 #' @param r vector of historical learning rates for departments 1 through m
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples
 #' 
 #' \dontrun{
@@ -24,6 +23,8 @@
 #' agg_curve(t = t, r = r, n = 300)
 #' ## [1] 11000.96
 #' }
+#' 
+#' @export
 
 agg_curve <- function(t, r, n, na.rm = FALSE){
   
@@ -40,7 +41,7 @@ agg_curve <- function(t, r, n, na.rm = FALSE){
     n <- n[!is.na(n)]
     r <- r[!is.na(r)]
     
-    warning('Any strings with NA were filtered. This may result in \n',
+    message('Any strings with NA were filtered. This may result in \n',
             'unexpected recycling.')
   }
   

@@ -5,13 +5,13 @@
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
-#' @examples
-#' 
+#' @examples 
 #' # Calculate the natural slope for learning rates of 80%, 85%, 90%
 #' 
 #' natural_slope(r = c(.80, .85, .90))
 #' ## [1] -0.3219281 -0.2344653 -0.1520031
+#' 
+#' @export
 
 natural_slope <- function(r, na.rm = FALSE){
   
@@ -38,12 +38,12 @@ natural_slope <- function(r, na.rm = FALSE){
 #' @param b natural slope
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
-#' @examples
-#' 
+#' @examples  
 #' # Calculate the learning rates for natural slopes -.19, -.22, -.25
 #' lc_rate(b = c(-.19, -.22, -.25))
 #' ## [1] 0.8766057 0.8585654 0.8408964
+#' 
+#' @export
 
 lc_rate <- function(b, na.rm = FALSE){
   
@@ -71,8 +71,7 @@ lc_rate <- function(b, na.rm = FALSE){
 #' @param n total n units produced
 #'
 #' @export
-#' @examples
-#' 
+#' @examples  
 #' # Estimate the natural slope for 250 units when the time for unit
 #' # one took 80 hours and the total time for all 250 units took
 #' # 8,250 hours.
@@ -106,8 +105,7 @@ natural_slope_est <- function(T, t, n){
 #' @param n total n units produced
 #'
 #' @export
-#' @examples
-#' 
+#' @examples 
 #' # Estimate the learning curve rate for 250 units when the time
 #' # for unit one took 80 hours and the total time for all 250
 #' # units took 8,250 hours.

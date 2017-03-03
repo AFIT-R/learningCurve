@@ -30,5 +30,5 @@ Computes cumulative time or cost for units m through n in a production block usi
 
 ca_block(t = 75, m = 201, n = 250, r = .85)
 ## [1] 806.772
-}
 
+}

@@ -29,5 +29,5 @@ library(learningCurve)
 
 unit_cum_exact(t = 100, n = 125, r = .85)
 ## [1] 5201.085
-}
 
+}

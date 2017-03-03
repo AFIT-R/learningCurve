@@ -32,5 +32,5 @@ plot_delta(t = 50, m = 1, n = 25, r = .885)
 
 # Plot the differences between cumulative time requirements
 plot_delta(t = 50, m = 1, n = 25, r = .885, level = "c")
-}
 
+}

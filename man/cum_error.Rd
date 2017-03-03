@@ -26,5 +26,5 @@ Computes approximate percent error in cumulative time (or cost) due to an incorr
 
 cum_error(n = 250, r1 = .85, r2 = .87)
 ## [1] 0.2035303
-}
 
+}

@@ -30,18 +30,18 @@ Plots the learning curve for units m through n. Allows you to choose between the
 
 # plot the time (or cost) per unit based on Crawford's Unit 
 # Learning Curve Function
-#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85)
+plot_unit_curve(t = 100, m = 1, n = 125, r = .85)
 
 # plot the cumulative time (or cost) per unit based on Crawford's 
 # Unit Learning Curve Function
-#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, level = "c")
+plot_unit_curve(t = 100, m = 1, n = 125, r = .85, level = "c")
 
 # plot the time (or cost) per unit based on Wright's Cumulative 
 # Average Learning Curve Function
-#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca")
+plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca")
 
 # plot the cumulative time (or cost) per unit based on Wrights's 
 # Cumulative Average Learning Curve Function
-#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca", level = "c")
-}
+plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca", level = "c")
 
+}

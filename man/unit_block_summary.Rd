@@ -37,5 +37,5 @@ unit_block_summary(t = 125, m = 201, n = 500, r = .75)
 
 ## $`midpoint hours`
 ## [1] 101.1683
-}
 
+}

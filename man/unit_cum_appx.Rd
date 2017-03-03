@@ -27,8 +27,8 @@ library(learningCurve)
 # for 125 units given the organization has historically experienced
 # an 85\% learning curve?
 
-unit_cum_exact(t = 100, n = 125, r = .85)
-## [1] 5201.085
+unit_cum_appx(t = 100, n = 125, r = .85)
+## [1] 5202.998
 
 # Computational difference between unit_cum_exact() and unit_cum_appx() 
 # for 1 million units
@@ -40,5 +40,5 @@ system.time(unit_cum_exact(t = 100, n = 1000000, r = .85))
 system.time(unit_cum_appx(t = 100, n = 1000000, r = .85))
 ## user  system elapsed 
 ##  0       0       0
-}
 
+}

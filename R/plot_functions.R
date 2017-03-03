@@ -15,7 +15,6 @@
 #' @importFrom ggplot2 geom_text
 #' @importFrom ggplot2 aes
 #'
-#' @export
 #' @examples 
 #' # library(learningCurve)
 #' # An estimator wants to plot the learning curve for for units 
@@ -24,19 +23,21 @@
 #' 
 #' # plot the time (or cost) per unit based on Crawford's Unit 
 #' # Learning Curve Function
-#' #' plot_unit_curve(t = 100, m = 1, n = 125, r = .85)
+#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85)
 #' 
 #' # plot the cumulative time (or cost) per unit based on Crawford's 
 #' # Unit Learning Curve Function
-#' #' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, level = "c")
+#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, level = "c")
 #' 
 #' # plot the time (or cost) per unit based on Wright's Cumulative 
 #' # Average Learning Curve Function
-#' #' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca")
+#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca")
 #' 
 #' # plot the cumulative time (or cost) per unit based on Wrights's 
 #' # Cumulative Average Learning Curve Function
-#' #' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca", level = "c")
+#' plot_unit_curve(t = 100, m = 1, n = 125, r = .85, model = "ca", level = "c")
+#' 
+#' @export
 
 plot_unit_curve <- function(t, m, n, r, model = "u", level = "u"){
   
@@ -105,14 +106,14 @@ plot_unit_curve <- function(t, m, n, r, model = "u", level = "u"){
 #' @param m mth unit for which you have time (or cost) information (default is m = 1)
 #' @param r learning curve rate
 #'
-#' @export
-#' @examples
-#' 
+#' @examples  
 #' # A production block runs from unit 201 to unit 500 inclusive.
 #' # The 201st unit had a required time of 125 hours with a 75% 
 #' # learning curve. Plot the block summary?
 #' 
 #' plot_block_summary(t = 125, m = 201, n = 500, r = .75)
+#' 
+#' @export
 
 plot_block_summary <- function(t, m, n, r){
   
@@ -141,7 +142,6 @@ plot_block_summary <- function(t, m, n, r){
 #' @param r learning curve rate
 #' @param level plot the delta between the Crawford and Wright models at the unit ("u") or cumulative ("c") level
 #'
-#' @export
 #' @examples 
 #' # The first unit of production is expected to require 50 hours and
 #' # the learning rate is expected to be 88.5%. However, the estimator
@@ -154,6 +154,8 @@ plot_block_summary <- function(t, m, n, r){
 #' 
 #' # Plot the differences between cumulative time requirements
 #' plot_delta(t = 50, m = 1, n = 25, r = .885, level = "c")
+#' 
+#' @export
 
 plot_delta <- function(t, m, n, r, level = "u"){
   

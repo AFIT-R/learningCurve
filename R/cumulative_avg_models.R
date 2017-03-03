@@ -8,7 +8,6 @@
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples 
 #' # An estimator want to know the unit hours for unit 2,200 using
 #' # when the hours for unit 1 were 110 and the learning rate was
@@ -16,6 +15,8 @@
 #' 
 #' ca_unit(t = 110, m = 1, n = 2200, r = .885)
 #' ## [1] 23.34001
+#' 
+#' @export
 
 ca_unit <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -34,7 +35,7 @@ ca_unit <- function(t, n, r, m = 1, na.rm = FALSE){
     n <- n[!is.na(n)]
     r <- r[!is.na(r)]
     
-    warning('Any strings with NA were filtered. This may result in \n',
+    message('Any strings with NA were filtered. This may result in \n',
             'unexpected recycling.')
   }
   
@@ -57,7 +58,6 @@ ca_unit <- function(t, n, r, m = 1, na.rm = FALSE){
 #' @param r learning curve rate
 #' @param na.rm Should \code{NA} values be removed?
 #'
-#' @export
 #' @examples 
 #' # Production of the first 200 units of a product is nearing its
 #' # end. Your customer said he is willing to buy an additional 50
@@ -68,6 +68,8 @@ ca_unit <- function(t, n, r, m = 1, na.rm = FALSE){
 #' 
 #' ca_block(t = 75, m = 201, n = 250, r = .85)
 #' ## [1] 806.772
+#' 
+#' @export
 
 ca_block <- function(t, n, r, m = 1, na.rm = FALSE){
   
@@ -91,7 +93,7 @@ ca_block <- function(t, n, r, m = 1, na.rm = FALSE){
     n <- n[!is.na(n)]
     r <- r[!is.na(r)]
     
-    warning('Any strings with NA were filtered. This may result in \n',
+    message('Any strings with NA were filtered. This may result in \n',
             'unexpected recycling.')
   }
   
