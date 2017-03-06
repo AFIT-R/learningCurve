@@ -6,7 +6,7 @@
 ^\.RData$
 ^\.Ruserdata$
 meetings/
-article/
+paper/
 ^README\.Rmd$
 ^README-.*\.png$
 ^cran-comments\.md$
