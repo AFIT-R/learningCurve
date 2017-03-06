@@ -1,0 +1,30 @@
+{
+  "@context": "https://raw.githubusercontent.com/mbjones/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "http://orcid.org/0000-0002-3611-8516",
+      "@type": "Person",
+      "email": "bradleyboehmke@gmail.com",
+      "name": "Bradley C. Boehmke",
+      "affiliation": "Air Force Institute of Technology"
+    },
+    {
+      "@id": NULL,
+      "@type": "Person",
+      "email": "auburngrads@live.com",
+      "name": "Jason K. Freels",
+      "affiliation": "Air Force Institute of Technology"
+    }
+    ],
+  "identifier": "",
+  "codeRepository": "https://github.com/Auburngrads/learningCurve",
+  "datePublished": "2017-02-28",
+  "dateModified": "2017-02-28",
+  "dateCreated": "2016-08-10",
+  "description": "An implementation of Crawford's and Wright's learning curve production functions.",
+  "keywords": "cost analysis, R programming",
+  "license": "GPL",
+  "title": "learningCurve",
+  "version": "1.1.1"
+}
