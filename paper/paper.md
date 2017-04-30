@@ -1,5 +1,5 @@
 ---
-  title: "learningCurve: An implementation of Crawford's and Wright's learning curve production functions"
+title: "learningCurve: An implementation of Crawford's and Wright's learning curve production functions"
 tags:
   - cost analysis
   - R programming
