@@ -5,13 +5,13 @@ tags:
   - R programming
 authors:
   - name: Bradley C. Boehmke
-orcid: 0000-0002-3611-8516
-affiliation: 1
-- name: Jason K. Freels
-affiliation: 1
+    orcid: 0000-0002-3611-8516
+    affiliation: 1
+  - name: Jason K. Freels
+    affiliation: 1
 affiliations:
   - name: Air Force Institute of Technology
-index: 1
+    index: 1
 date: 06 March 2017
 bibliography: paper.bib
 ---
