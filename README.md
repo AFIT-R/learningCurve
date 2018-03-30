@@ -5,7 +5,7 @@ learningCurve
 
 **Author:** [Brad Boehmke](http://bradleyboehmke.github.io/) & [Jason Freels](https://github.com/Auburngrads)<br/> **License:** [GPL-3.0](https://opensource.org/licenses/GPL-3.0)
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/learningCurve)](https://cran.r-project.org/package=learningCurve) [![Travis-CI Build Status](https://travis-ci.org/bradleyboehmke/learningCurve.svg?branch=master)](https://travis-ci.org/bradleyboehmke/learningCurve) [![codecov](https://codecov.io/gh/bradleyboehmke/learningCurve/branch/master/graph/badge.svg)](https://codecov.io/gh/bradleyboehmke/learningCurve) [![DOI](https://zenodo.org/badge/60852792.svg)](https://zenodo.org/badge/latestdoi/60852792)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/learningCurve)](https://cran.r-project.org/package=learningCurve) [![Travis-CI Build Status](https://travis-ci.org/AFIT-R/learningCurve.svg?branch=master)](https://travis-ci.org/AFIT-R/learningCurve) [![codecov](https://codecov.io/gh/bradleyboehmke/learningCurve/branch/master/graph/badge.svg)](https://codecov.io/gh/bradleyboehmke/learningCurve) [![DOI](https://zenodo.org/badge/60852792.svg)](https://zenodo.org/badge/latestdoi/60852792)
 
 `learningCurve` is an R package implements common learning curve production functions. It incorporates Crawford's and Wright's learning curve functions to compute unit and cumulative block estimates for time (or cost) of units along with an aggregate learning curve. It also provides delta and error functions and some basic learning curve plotting functions.along with functions to compute aggregated learning curves, error rates, and to visualize learning curves.
 

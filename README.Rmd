@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/learningCurve)](https://cran.r-project.org/package=learningCurve)
-[![Travis-CI Build Status](https://travis-ci.org/bradleyboehmke/learningCurve.svg?branch=master)](https://travis-ci.org/bradleyboehmke/learningCurve)
+[![Travis-CI Build Status](https://travis-ci.org/AFIT-R/learningCurve.svg?branch=master)](https://travis-ci.org/AFIT-R/learningCurve)
 [![codecov](https://codecov.io/gh/bradleyboehmke/learningCurve/branch/master/graph/badge.svg)](https://codecov.io/gh/bradleyboehmke/learningCurve)
 [![DOI](https://zenodo.org/badge/60852792.svg)](https://zenodo.org/badge/latestdoi/60852792)
 
