@@ -7,7 +7,7 @@ This is a resubmission. In this version I have:
 
 ## Test environment
 * Tested on local OS X install, R 3.4.4
-* ubuntu 12.04.5 (on travis-ci), R 3.3.2
+* ubuntu 14.04.5 (on travis-ci), R 3.4.4
 * win-builder (devel and release)
 
 
