@@ -2,6 +2,7 @@
 This is a resubmission. In this version I have:
   
 * removed tidyverse as a dependency
+* updated URL for new organization
 
 
 ## Test environment
