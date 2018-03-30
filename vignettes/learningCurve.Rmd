@@ -115,7 +115,8 @@ To put these functions into action we load the `learningCurve` package along wit
 
 ```{r, message=FALSE, warning=FALSE}
 library(learningCurve)
-library(tidyverse)
+library(tibble)
+library(ggplot2)
 ```
 
 To use the unit_curve function we need to supply it with the following arguments: 
